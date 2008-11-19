@@ -13,7 +13,7 @@
       attachment.public_filename, :class => 'thumbnail' %>
     <% end %>
     <% unless attachment.title.blank? %>
-		<p><%= h attachment.short_title %></p>
+		<p><%= h attachment.title %></p>
 	<% end %>
 	<%= link_to attachment.short_filename, attachment.public_filename %>
 </li>
