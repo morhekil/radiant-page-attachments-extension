@@ -10,7 +10,7 @@ class PageAttachmentsExtension < Radiant::Extension
    define_routes do |map|
      map.connect 'page_attachments/:action/:id', :controller => 'page_attachments'
    end
-  
+
   def activate
     # Regular page attachments stuff
     Page.class_eval {
@@ -18,7 +18,7 @@ class PageAttachmentsExtension < Radiant::Extension
       include PageAttachmentTags
     }
     UserActionObserver.send :include, ObservePageAttachments
-    Admin::PageController.send :include, PageAttachmentsInterface
+    Admin::PagesController.send :include, PageAttachmentsInterface
   end
 
   def deactivate
